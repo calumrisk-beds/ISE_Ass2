@@ -1,5 +1,5 @@
 import sqlite3
-from SharedPower.test_users  import User
+from Old.test_users import User
 
 db = 'shared_power.db'
 
