@@ -1,7 +1,7 @@
 from tkinter import *
 import sqlite3
 from os.path import join, dirname, abspath
-import Shared_Power.DB.sql_backend as sql
+import Shared_Power.DB.sql_create as sqlc
 from Shared_Power.Classes.user import User
 
 path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
@@ -85,7 +85,7 @@ class CreateAccount:
         usr = User(self.usr_id_ent.get(), self.pwrd_ent.get(), self.usr_typ_var.get(), self.fname_ent.get(),
                    self.lname_ent.get(), self.add1_ent.get(), self.add2_ent.get(), self.add3_ent.get(),
                    self.add4_ent.get(), self.pc_ent.get(), self.tel_ent.get(), 0)
-        sql.insert_user(usr)
+        sqlc.insert_user(usr)
 
         # Clear Text Boxes
         self.usr_id_ent.delete(0, END)

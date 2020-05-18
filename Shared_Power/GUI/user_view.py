@@ -2,7 +2,8 @@ from tkinter import *
 import sqlite3
 from os.path import join, dirname, abspath
 from Shared_Power.GUI.create_account import CreateAccount
-import Shared_Power.DB.sql_backend as sql
+from Shared_Power.GUI.create_tool import CreateTool
+import Shared_Power.DB.sql_create as sql
 
 
 path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
@@ -10,7 +11,11 @@ conn = sqlite3.connect(path)
 
 
 class UserView:
-    def __init__(self, master):
+
+    def __init__(self, master, uid_token):
+        self.master = master
+        self.uid_token = uid_token
+
         self.frame = Frame(master)
         self.frame.pack()
 
@@ -18,7 +23,10 @@ class UserView:
         print("test")
 
     def tool_owner(self):
-        pass
+        self.master.title("Tool Owner")
+
+        add_tl_btn = Button(self.frame, text="Add Tool", command=self.add_tool)
+        add_tl_btn.grid(column=0, row=0)
 
     def dispatch_rider(self):
         pass
@@ -30,7 +38,8 @@ class UserView:
         pass
 
     def add_tool(self):
-        pass
+        self.frame.destroy()
+        CreateTool(self.master, self.uid_token)
 
     def mang_tools(self):
         pass
