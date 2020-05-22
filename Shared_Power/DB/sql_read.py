@@ -19,3 +19,16 @@ def get_tool_by_id(tool_id):
         c.execute("SELECT * FROM tools WHERE tool_id = :tool_id", {'tool_id': tool_id})
         return c.fetchall()
 
+def get_tools_by_uid(usr_id):
+    with conn:
+        c.execute("SELECT * FROM tools WHERE tool_owner = :usr_id", {'usr_id': usr_id})
+        return c.fetchall()
+
+
+if __name__ == "__main__":
+    tools = get_tools_by_uid('test4')
+
+    for x in tools:
+        print(x[0])
+
+

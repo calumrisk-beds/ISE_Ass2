@@ -4,6 +4,7 @@ from os.path import join, dirname, abspath
 import shutil
 import Shared_Power.DB.sql_create as sqlc
 from Shared_Power.Classes.tool import Tool
+# from Shared_Power.GUI.user_view import UserView
 
 path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
 conn = sqlite3.connect(path)
@@ -44,33 +45,8 @@ class CreateTool:
         self.pic_path_ent = Entry(self.frame)
         self.pic_path_ent.grid(column=1, row=4)
 
-        self.submit_btn = Button(self.frame, text="Submit", command=self.submit)
-        self.submit_btn.grid(column=1, row=5)
-
-    def submit(self):
-        # Copying image file into Images directory as temporary file
-        src = self.pic_path_ent.get()
-        dst = join(dirname(dirname(abspath(__file__))), 'Images')
-        temp_store = shutil.copy(src, dst)
-
-        # Read image file as binary file that will be stored into the DB
-        f = open(temp_store, 'rb')
-        rf = f.read()
-
-        # Store tool details in DB
-        tl = Tool(tool_id='', tool_owner=self.uid_token, tool_name=self.tl_name_ent.get(), descr=self.descr_ent.get(),
-                  day_rate=self.drate_ent.get(), halfd_rate=self.hdrate_ent.get(), prof_pic=rf)
-        sqlc.insert_tool(tl)
-
-        # Clear Text Boxes
-        self.tl_name_ent.delete(0, END)
-        self.descr_ent.delete(0, END)
-        self.drate_ent.delete(0, END)
-        self.hdrate_ent.delete(0, END)
-        self.pic_path_ent.delete(0, END)
-
 
 if __name__ == "__main__":
     root = Tk()
-    CreateTool(root)
+    CreateTool(root, 'test4')
     root.mainloop()
