@@ -1,0 +1,7 @@
+
+2020-05-23 18:15:04.398840 - list index out of range
+2020-05-23 18:15:04.398840 - local variable 'real_pw' referenced before assignment
+2020-05-23 18:27:04.015259 - list index out of range
+2020-05-23 18:27:04.015259 - local variable 'real_pw' referenced before assignment
+2020-05-23 18:50:07.265186 - list index out of range
+2020-05-23 18:50:07.265186 - local variable 'real_pw' referenced before assignment
