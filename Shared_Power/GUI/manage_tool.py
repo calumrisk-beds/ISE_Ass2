@@ -29,7 +29,7 @@ class ManageTool:
 
         self.this_tl = sqlr.get_tool_by_id(slcted_tl)
 
-        self.this_tl_id_txt = "Tool ID: #{}#".format(self.this_tl[0][0])
+        #self.this_tl_id_txt = "Tool ID: #{}#".format(self.this_tl[0][0])
 
         self.curr_val_lbl = Label(self.frame, text="Current Value", padx=20)
         self.curr_val_lbl.grid(column=1, row=0)
@@ -85,7 +85,6 @@ class ManageTool:
         self.new_pic_ent = Entry(self.frame2)
         self.new_pic_ent.pack()
 
-        #self.master.mainloop()
 
 if __name__ == "__main__":
     root = Tk()

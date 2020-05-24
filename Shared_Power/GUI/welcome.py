@@ -4,6 +4,7 @@ from os.path import join, dirname, abspath
 import datetime
 from Shared_Power.GUI.create_account import CreateAccount
 from Shared_Power.GUI.user_view import UserView
+from Shared_Power.GUI.tool_user_view import ToolUserView
 from Shared_Power.GUI.tool_owner_view import ToolOwnerView
 import Shared_Power.DB.sql_read as sqlr
 
@@ -12,6 +13,7 @@ conn = sqlite3.connect(path)
 
 logfile = join(dirname(dirname(abspath(__file__))), 'LogFile.txt')
 now = datetime.datetime.now()
+
 
 class Welcome:
 
@@ -45,7 +47,9 @@ class Welcome:
         self.quit_btn = Button(self.frame, text="Quit", command=self.frame.quit)
         self.quit_btn.grid(column=0, row=3)
 
+        # Defining class variable that will be assigned values within functions
         self.tov = ''
+        self.tuv = ''
 
     def login(self):
         uid = self.usr_id_ent.get()
@@ -60,6 +64,7 @@ class Welcome:
                 log.write('\n' + str(now) + ' - ' + str(e))
 
         try:
+            # Checks variables have been assigned values before running if statement
             real_pw = real_pw
             usr_typ = usr_typ
         except UnboundLocalError as e:
@@ -70,7 +75,13 @@ class Welcome:
         else:
             if pw == real_pw:
                 if usr_typ == "Tool User":
-                    UserView(self.master, uid).tool_user()
+                    self.frame.destroy()
+                    try:
+                        self.frame2.destroy()
+                    except AttributeError as e:
+                        with open(logfile, 'a') as log:
+                            log.write('\n' + str(now) + ' - ' + str(e))
+                    self.tuv = ToolUserView(self.master, uid)
                 if usr_typ == "Tool Owner":
                     self.frame.destroy()
                     try:

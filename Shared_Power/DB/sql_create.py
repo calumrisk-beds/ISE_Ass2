@@ -41,10 +41,23 @@ def insert_tool(tl):  # Pass in the tool you want to create.
                    'halfd_rate': tl.halfd_rate,
                    'prof_pic': tl.prof_pic})
 
+def insert_booking(bkg):
+    with conn:
+        c.execute("""INSERT INTO bookings VALUES (
+                            NULL, :tool_id, :booked_by, :start_time,
+                            :end_time, :deliv_collect, :completed)""",
+                  {'booking_id': bkg.booking_id,
+                   'tool_id': bkg.tool_id,
+                   'booked_by': bkg.booked_by,
+                   'start_time': bkg.start_time,
+                   'end_time': bkg.end_time,
+                   'deliv_collect': bkg.deliv_collect,
+                   'completed': bkg.completed})
+
 
 def create_users_table():
     with conn:
-        c.execute("""CREATE TABLE users (
+        c.execute("""CREATE TABLE IF NOT EXISTS users (
                     usr_id TEXT PRIMARY KEY,
                     pwrd TEXT,
                     usr_type text,
@@ -62,7 +75,7 @@ def create_users_table():
 
 def create_tools_table():
     with conn:
-        c.execute("""CREATE TABLE tools (
+        c.execute("""CREATE TABLE IF NOT EXISTS tools (
                     tool_id INTEGER PRIMARY KEY,
                     tool_owner TEXT,
                     tool_name TEXT,
@@ -72,6 +85,17 @@ def create_tools_table():
                     prof_pic BLOB           
                 )""")
 
+def create_bookings_table():
+    with conn:
+        c.execute("""CREATE TABLE IF NOT EXISTS bookings (
+                    booking_id INTEGER PRIMARY KEY,
+                    tool_id INTEGER,
+                    booked_by TEXT,
+                    start_time TEXT,
+                    end_time TEXT,
+                    deliv_collect TEXT,
+                    completed TEXT
+                    )""")
 
 if __name__ == "__main__":
     # create_users_table()
@@ -88,4 +112,5 @@ if __name__ == "__main__":
     # get_user_by_id('test2')
     # create_users_table()
     # create_tools_table()
+    # create_bookings_table()
     pass
