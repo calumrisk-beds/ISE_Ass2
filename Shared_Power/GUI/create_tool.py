@@ -4,7 +4,6 @@ from os.path import join, dirname, abspath
 import shutil
 import Shared_Power.DB.sql_create as sqlc
 from Shared_Power.Classes.tool import Tool
-# from Shared_Power.GUI.user_view import UserView
 
 path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
 conn = sqlite3.connect(path)
@@ -15,10 +14,18 @@ class CreateTool:
         self.master = master
         self.uid_token = uid_token
 
-        self.master.title("Create Tool")
+        self.window = Toplevel()
 
-        self.frame = Frame(master)
+        self.window.title("Create Tool")
+
+        self.mainframe = Frame(self.window)
+        self.mainframe.pack()
+
+        self.frame = Frame(self.mainframe)
         self.frame.pack()
+
+        self.frame2 = Frame(self.mainframe)
+        self.frame2.pack()
 
         self.tl_name_lbl = Label(self.frame, text="Tool Name")
         self.tl_name_lbl.grid(column=0, row=0)
@@ -44,6 +51,28 @@ class CreateTool:
         self.pic_path_lbl.grid(column=0, row=4)
         self.pic_path_ent = Entry(self.frame)
         self.pic_path_ent.grid(column=1, row=4)
+
+        self.submit_btn = Button(self.frame2, text="Submit", command=self.submit)
+        self.submit_btn.pack()
+
+    def submit(self):
+        # Copying image file into Images directory as temporary file
+        src = self.pic_path_ent.get()
+        dst = join(dirname(dirname(abspath(__file__))), 'Images')
+        temp_store = shutil.copy(src, dst)
+
+        # Read image file as binary file that will be stored into the DB
+        f = open(temp_store, 'rb')
+        rf = f.read()
+
+        # Store tool details in DB
+        tl = Tool(tool_id='', tool_owner=self.uid_token, tool_name=self.tl_name_ent.get(),
+                  descr=self.descr_ent.get(), day_rate=self.drate_ent.get(),
+                  halfd_rate=self.hdrate_ent.get(), prof_pic=rf, repair_status='None')
+        sqlc.insert_tool(tl)
+
+        # Destroy window
+        self.window.destroy()
 
 
 if __name__ == "__main__":

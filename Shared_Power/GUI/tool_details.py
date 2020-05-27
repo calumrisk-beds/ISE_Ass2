@@ -5,15 +5,8 @@ import sqlite3
 from os.path import join, dirname, abspath
 import shutil
 import datetime
-from Shared_Power.GUI.create_account import CreateAccount
-from Shared_Power.GUI.create_tool import CreateTool
-from Shared_Power.GUI.my_tools import MyTools
-from Shared_Power.GUI.manage_tool import ManageTool
 from Shared_Power.GUI.book_tool import BookTool
-import Shared_Power.DB.sql_create as sqlc
 import Shared_Power.DB.sql_read as sqlr
-from Shared_Power.Classes.tool import Tool
-from Shared_Power.Classes.booking import Booking
 
 path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
 conn = sqlite3.connect(path)
@@ -28,9 +21,11 @@ class ToolDetails:
         self.uid_token = uid_token
         self.slcted_tl = slcted_tl
 
-        self.master.title("Tool Details")
+        self.window = Toplevel()
 
-        self.mainframe = Frame(self.master)
+        self.window.title("Tool Details")
+
+        self.mainframe = Frame(self.window)
         self.mainframe.pack(expand=True, fill=BOTH)
 
         self.scrlbar = Scrollbar(self.mainframe, orient=VERTICAL)
@@ -90,6 +85,11 @@ class ToolDetails:
         self.hdrate_lbl.grid(column=0, row=5)
         self.this_hdrate = Label(self.frame, text=self.this_tl[0][5])
         self.this_hdrate.grid(column=1, row=5)
+
+        self.repair_lbl = Label(self.frame, text="Repair Status")
+        self.repair_lbl.grid(column=0, row=6)
+        self.this_rstatus = Label(self.frame, text=self.this_tl[0][7])
+        self.this_rstatus.grid(column=1, row=6)
 
         # Blank Label to space out details
         self.blank_lbl = Label(self.frame)
@@ -155,7 +155,7 @@ class ToolDetails:
         mainloop()
 
     def check_available(self):
-        self.mainframe.destroy()
+        self.window.destroy()
         self.bt = BookTool(self.master, self.uid_token, self.slcted_tl)
 
 

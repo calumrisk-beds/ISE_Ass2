@@ -7,11 +7,13 @@ path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
 conn = sqlite3.connect(path)
 c = conn.cursor()
 
+
 def update_password(usr_id, new_pwrd):
     with conn:
         c.execute("""UPDATE users SET pwrd = :new_pwrd
                     WHERE usr_id = :usr_id""",
                   {'usr_id': usr_id, 'new_pwrd': new_pwrd})
+
 
 def update_tool(tl):
     with conn:
@@ -25,4 +27,36 @@ def update_tool(tl):
                    'day_rate': tl.day_rate,
                    'halfd_rate': tl.halfd_rate,
                    'prof_pic': tl.prof_pic})
+
+
+def assign_courier(booking_id, courier_id):
+    with conn:
+        c.execute("""UPDATE bookings SET courier_id = :courier_id
+                            WHERE booking_id = :booking_id""",
+                  {'booking_id': booking_id, 'courier_id': courier_id})
+
+
+def add_repair_status_column():
+    with conn:
+        c.execute("""ALTER TABLE tools 
+                            ADD repair_status TEXT""")
+
+
+def add_days_late_column():
+    with conn:
+        c.execute("""ALTER TABLE bookings 
+                            ADD days_late INTEGER""")
+
+
+def complete_booking(booking_id, completed, days_late):
+    with conn:
+        c.execute("""UPDATE bookings SET completed = :completed, days_late = :days_late
+                            WHERE booking_id = :booking_id""",
+                  {'booking_id': booking_id, 'completed': completed, 'days_late': days_late})
+
+
+if __name__ == "__main__":
+    # add_repair_status_column()
+    # add_days_late_column()
+    pass
 

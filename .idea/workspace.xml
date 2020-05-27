@@ -22,13 +22,33 @@
     <list default="true" id="0deae8d5-3ae5-45cb-a8c4-40b5c13fd6b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/23521386-2fa4-4269-9238-a60e13e4d638.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/23521386-2fa4-4269-9238-a60e13e4d638.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/dataset_backend.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/sqlite_testing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/test_users.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/user_factory.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared_Power/Classes/booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/Classes/booking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/Classes/delivery.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/Classes/tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/Classes/tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/Classes/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/Classes/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared_Power/DB/shared_power.db" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/DB/shared_power.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared_Power/DB/sql_create.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/DB/sql_create.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/DB/sql_delete.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/DB/sql_delete.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared_Power/DB/sql_read.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/DB/sql_read.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/DB/sql_update.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/DB/sql_update.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/GUI/book_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/GUI/book_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/GUI/create_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/GUI/create_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/GUI/create_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/GUI/create_tool.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared_Power/GUI/manage_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/GUI/manage_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/GUI/my_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/GUI/my_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/GUI/tool_details.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/GUI/tool_details.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/GUI/tool_owner_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/GUI/tool_owner_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/GUI/tool_user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/GUI/tool_user_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/GUI/user_view.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/GUI/view_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/GUI/view_tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared_Power/GUI/welcome.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/GUI/welcome.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared_Power/logs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/Images/save_img.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/Images/temp_img.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/Images/temp_img.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared_Power/LogFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Shared_Power/LogFile.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,11 +86,12 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\calum\OneDrive\Documents\GitHub\ISE_Ass2\Shared_Power\GUI" />
       <recent name="C:\Users\calum\OneDrive\Documents\GitHub\ISE_Ass2\Old" />
       <recent name="C:\Users\calum\OneDrive\Documents\GitHub\ISE_Ass2\SharedPower\users" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.book_tool">
+  <component name="RunManager" selected="Python.__main__">
     <configuration name="book_tool" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ISE_Ass2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,7 +114,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sql_read" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ISE_Ass2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -101,12 +122,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Shared_Power/DB" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Shared_Power" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Shared_Power/DB/sql_read.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\calum\OneDrive\Documents\GitHub\ISE_Ass2\Shared_Power\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -115,7 +136,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tool_details" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="my_invoices" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ISE_Ass2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -128,7 +149,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Shared_Power/GUI/tool_details.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Shared_Power/GUI/my_invoices.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,7 +158,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="view_tools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="tool_owner_view" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ISE_Ass2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,7 +171,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Shared_Power/GUI/view_tools.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Shared_Power/GUI/tool_owner_view.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -182,19 +203,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.tool_details" />
       <item itemvalue="Python.welcome" />
-      <item itemvalue="Python.view_tools" />
+      <item itemvalue="Python.my_invoices" />
+      <item itemvalue="Python.tool_owner_view" />
       <item itemvalue="Python.book_tool" />
-      <item itemvalue="Python.sql_read" />
+      <item itemvalue="Python.__main__" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.__main__" />
         <item itemvalue="Python.book_tool" />
-        <item itemvalue="Python.sql_read" />
-        <item itemvalue="Python.tool_details" />
-        <item itemvalue="Python.view_tools" />
         <item itemvalue="Python.welcome" />
+        <item itemvalue="Python.tool_owner_view" />
+        <item itemvalue="Python.my_invoices" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +250,8 @@
       <workItem from="1589650358419" duration="4178000" />
       <workItem from="1589712403286" duration="103339000" />
       <workItem from="1590103446775" duration="27268000" />
-      <workItem from="1590256154779" duration="52799000" />
+      <workItem from="1590256154779" duration="78202000" />
+      <workItem from="1590428094878" duration="65542000" />
     </task>
     <servers />
   </component>
@@ -286,68 +308,87 @@
     </state>
     <state x="740" y="266" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589732850845" />
     <state x="740" y="266" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1590141109436" />
-    <state width="1877" height="260" key="GridCell.Tab.0.bottom" timestamp="1590362756102">
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom" timestamp="1590574640359">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.bottom/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590362756102" />
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590458575973" />
     <state width="1877" height="274" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589990317459" />
-    <state width="916" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590323013935" />
-    <state width="1877" height="260" key="GridCell.Tab.0.center" timestamp="1590362756102">
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom/-1920.592.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590574640359" />
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590504654002" />
+    <state width="1877" height="260" key="GridCell.Tab.0.center" timestamp="1590574640359">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.center/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590362756102" />
+    <state width="1877" height="260" key="GridCell.Tab.0.center/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590458575973" />
     <state width="1877" height="274" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589990317458" />
-    <state width="916" height="260" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590323013935" />
-    <state width="1877" height="260" key="GridCell.Tab.0.left" timestamp="1590362756102">
+    <state width="1877" height="260" key="GridCell.Tab.0.center/-1920.592.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590574640359" />
+    <state width="1877" height="260" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590504654002" />
+    <state width="1877" height="260" key="GridCell.Tab.0.left" timestamp="1590574640359">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.left/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590362756102" />
+    <state width="1877" height="260" key="GridCell.Tab.0.left/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590458575973" />
     <state width="1877" height="274" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589990317458" />
-    <state width="916" height="260" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590323013935" />
-    <state width="1877" height="260" key="GridCell.Tab.0.right" timestamp="1590362756102">
+    <state width="1877" height="260" key="GridCell.Tab.0.left/-1920.592.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590574640359" />
+    <state width="1877" height="260" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590504654002" />
+    <state width="1877" height="260" key="GridCell.Tab.0.right" timestamp="1590574640359">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.right/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590362756102" />
+    <state width="1877" height="260" key="GridCell.Tab.0.right/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590458575973" />
     <state width="1877" height="274" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589990317459" />
-    <state width="916" height="260" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590323013935" />
-    <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1590338219831">
+    <state width="1877" height="260" key="GridCell.Tab.0.right/-1920.592.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590574640359" />
+    <state width="1877" height="260" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590504654002" />
+    <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1590439953413">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.1.bottom/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590338219831" />
+    <state width="1877" height="352" key="GridCell.Tab.1.bottom/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590439953413" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589650336327" />
-    <state width="1877" height="352" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1589492924382" />
-    <state width="1877" height="352" key="GridCell.Tab.1.center" timestamp="1590338219831">
+    <state width="1877" height="352" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590428023292" />
+    <state width="1877" height="352" key="GridCell.Tab.1.center" timestamp="1590439953413">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.1.center/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590338219831" />
+    <state width="1877" height="352" key="GridCell.Tab.1.center/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590439953413" />
     <state width="1877" height="352" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589650336327" />
-    <state width="1877" height="352" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1589492924382" />
-    <state width="1877" height="352" key="GridCell.Tab.1.left" timestamp="1590338219830">
+    <state width="1877" height="352" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590428023292" />
+    <state width="1877" height="352" key="GridCell.Tab.1.left" timestamp="1590439953413">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.1.left/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590338219830" />
+    <state width="1877" height="352" key="GridCell.Tab.1.left/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590439953413" />
     <state width="1877" height="352" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589650336327" />
-    <state width="1877" height="352" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1589492924382" />
-    <state width="1877" height="352" key="GridCell.Tab.1.right" timestamp="1590338219831">
+    <state width="1877" height="352" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590428023292" />
+    <state width="1877" height="352" key="GridCell.Tab.1.right" timestamp="1590439953413">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.1.right/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590338219831" />
+    <state width="1877" height="352" key="GridCell.Tab.1.right/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590439953413" />
     <state width="1877" height="352" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589650336327" />
-    <state width="1877" height="352" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1589492924382" />
+    <state width="1877" height="352" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590428023292" />
     <state x="461" y="170" key="SettingsEditor" timestamp="1589155436797">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="170" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588174273263" />
     <state x="461" y="170" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1589155436797" />
-    <state x="1828" y="-8" width="1936" height="1036" maximized="true" key="dock-window-1" timestamp="1590326544059">
+    <state x="561" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590530258475">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="561" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-1920.592.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590530258475" />
+    <state x="345" y="76" width="1452" height="749" key="dock-window-1" timestamp="1590513392444">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1920" y="0" width="1452" height="749" maximized="true" key="dock-window-1/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590442680180" />
+    <state x="345" y="76" width="1452" height="749" key="dock-window-1/-1920.592.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590513392444" />
+    <state x="953" y="0" width="974" height="1057" key="dock-window-1/0.0.1920.1050@0.0.1920.1050" timestamp="1590322474218" />
+    <state x="-969" y="584" width="838" height="749" maximized="true" key="dock-window-2" timestamp="1590512666156">
+      <screen x="-1920" y="592" width="1920" height="1050" />
+    </state>
+    <state x="-1056" y="1080" width="838" height="749" maximized="true" key="dock-window-2/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590437025991" />
+    <state x="-969" y="584" width="838" height="749" maximized="true" key="dock-window-2/-1920.592.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590512666156" />
+    <state x="-1436" y="592" width="1452" height="749" maximized="true" key="dock-window-3" timestamp="1590569112052">
+      <screen x="-1920" y="592" width="1920" height="1050" />
+    </state>
+    <state x="1920" y="34" width="1462" height="749" maximized="true" key="dock-window-3/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590406671295" />
+    <state x="-1436" y="592" width="1452" height="749" maximized="true" key="dock-window-3/-1920.592.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590569112052" />
+    <state x="1920" y="0" width="1462" height="749" maximized="true" key="dock-window-4" timestamp="1590409427896">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="1828" y="-8" width="1936" height="1036" maximized="true" key="dock-window-1/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590326544059" />
-    <state x="953" y="0" width="974" height="1057" key="dock-window-1/0.0.1920.1050@0.0.1920.1050" timestamp="1590322474218" />
-    <state x="-1118" y="1183" width="1462" height="749" maximized="true" key="dock-window-2" timestamp="1590335966555">
-      <screen x="-1592" y="1080" width="1920" height="1050" />
-    </state>
-    <state x="-1118" y="1183" width="1462" height="749" maximized="true" key="dock-window-2/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590335966555" />
+    <state x="1920" y="0" width="1462" height="749" maximized="true" key="dock-window-4/-1592.1080.1920.1050/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590409427896" />
     <state x="188" y="128" width="585" height="801" key="find.popup" timestamp="1589409799237">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -362,29 +403,32 @@
     <SUITE FILE_PATH="coverage/ISE_Ass2$sqlite_backends.coverage" NAME="sqlite_backend Coverage Results" MODIFIED="1588948704892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$test.coverage" NAME="test Coverage Results" MODIFIED="1588194527958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$user_view.coverage" NAME="user_view Coverage Results" MODIFIED="1590142760135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
-    <SUITE FILE_PATH="coverage/ISE_Ass2$sql_read.coverage" NAME="sql_read Coverage Results" MODIFIED="1590362492025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/DB" />
+    <SUITE FILE_PATH="coverage/ISE_Ass2$sql_read.coverage" NAME="sql_read Coverage Results" MODIFIED="1590521698145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/DB" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$manage_tool.coverage" NAME="manage_tool Coverage Results" MODIFIED="1590326705985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
+    <SUITE FILE_PATH="coverage/ISE_Ass2$sql_update.coverage" NAME="sql_update Coverage Results" MODIFIED="1590521170524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/DB" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$tool_details.coverage" NAME="tool_details Coverage Results" MODIFIED="1590352761974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$User.coverage" NAME="User Coverage Results" MODIFIED="1589304228738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/Classes" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$sql_tables.coverage" NAME="sql_tables Coverage Results" MODIFIED="1589411404813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/DB" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$view_tools.coverage" NAME="view_tools Coverage Results" MODIFIED="1590349247996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
-    <SUITE FILE_PATH="coverage/ISE_Ass2$welcome.coverage" NAME="welcome Coverage Results" MODIFIED="1590347506573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
+    <SUITE FILE_PATH="coverage/ISE_Ass2$welcome.coverage" NAME="welcome Coverage Results" MODIFIED="1590543880180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$users.coverage" NAME="users Coverage Results" MODIFIED="1589138391232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SharedPower/users" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$sql_create__1_.coverage" NAME="sql_create (1) Coverage Results" MODIFIED="1589648970494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/DB" />
-    <SUITE FILE_PATH="coverage/ISE_Ass2$book_tool.coverage" NAME="book_tool Coverage Results" MODIFIED="1590362756095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
+    <SUITE FILE_PATH="coverage/ISE_Ass2$book_tool.coverage" NAME="book_tool Coverage Results" MODIFIED="1590573025116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$tool_availability.coverage" NAME="tool_availability Coverage Results" MODIFIED="1590326526848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$sqlite_testing.coverage" NAME="sqlite_testing Coverage Results" MODIFIED="1589296621815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SharedPower" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$sql_backend.coverage" NAME="sql_backend Coverage Results" MODIFIED="1589490753024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/DB" />
-    <SUITE FILE_PATH="coverage/ISE_Ass2$create_tool.coverage" NAME="create_tool Coverage Results" MODIFIED="1589927994888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
+    <SUITE FILE_PATH="coverage/ISE_Ass2$create_tool.coverage" NAME="create_tool Coverage Results" MODIFIED="1590408110912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$login.coverage" NAME="login Coverage Results" MODIFIED="1589491632560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$create_account.coverage" NAME="create_account Coverage Results" MODIFIED="1589415175924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$save_img.coverage" NAME="save_img Coverage Results" MODIFIED="1589746954253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/Images" />
-    <SUITE FILE_PATH="coverage/ISE_Ass2$sql_create.coverage" NAME="sql_create Coverage Results" MODIFIED="1590319353329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/DB" />
-    <SUITE FILE_PATH="coverage/ISE_Ass2$sql_delete.coverage" NAME="sql_delete Coverage Results" MODIFIED="1589758760038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/DB" />
-    <SUITE FILE_PATH="coverage/ISE_Ass2$tool_owner_view.coverage" NAME="tool_owner_view Coverage Results" MODIFIED="1590335965867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
+    <SUITE FILE_PATH="coverage/ISE_Ass2$sql_create.coverage" NAME="sql_create Coverage Results" MODIFIED="1590513312406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/DB" />
+    <SUITE FILE_PATH="coverage/ISE_Ass2$sql_delete.coverage" NAME="sql_delete Coverage Results" MODIFIED="1590513166205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/DB" />
+    <SUITE FILE_PATH="coverage/ISE_Ass2$tool_owner_view.coverage" NAME="tool_owner_view Coverage Results" MODIFIED="1590543732085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
+    <SUITE FILE_PATH="coverage/ISE_Ass2$my_invoices.coverage" NAME="my_invoices Coverage Results" MODIFIED="1590543519065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$my_tools.coverage" NAME="my_tools Coverage Results" MODIFIED="1590335636144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
+    <SUITE FILE_PATH="coverage/ISE_Ass2$__main__.coverage" NAME="main Coverage Results" MODIFIED="1590574640342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$model_view_controller.coverage" NAME="model_view_controller Coverage Results" MODIFIED="1588952328024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power" />
-    <SUITE FILE_PATH="coverage/ISE_Ass2$tool_user_view.coverage" NAME="tool_user_view Coverage Results" MODIFIED="1590323547422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
+    <SUITE FILE_PATH="coverage/ISE_Ass2$tool_user_view.coverage" NAME="tool_user_view Coverage Results" MODIFIED="1590435708419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Shared_Power/GUI" />
     <SUITE FILE_PATH="coverage/ISE_Ass2$dataset_backend.coverage" NAME="dataset_backend Coverage Results" MODIFIED="1589216178896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SharedPower" />
   </component>
 </project>

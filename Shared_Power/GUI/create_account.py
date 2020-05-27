@@ -11,9 +11,12 @@ conn = sqlite3.connect(path)
 class CreateAccount:
     def __init__(self, master):
         self.master = master
-        self.master.title("Create Account")
 
-        self.frame = Frame(master)
+        self.window = Toplevel()
+
+        self.window.title("Create Account")
+
+        self.frame = Frame(self.window)
         self.frame.pack()
 
         self.usr_id_lbl = Label(self.frame, text="User ID")
@@ -84,20 +87,11 @@ class CreateAccount:
         # Insert into DB
         usr = User(self.usr_id_ent.get(), self.pwrd_ent.get(), self.usr_typ_var.get(), self.fname_ent.get(),
                    self.lname_ent.get(), self.add1_ent.get(), self.add2_ent.get(), self.add3_ent.get(),
-                   self.add4_ent.get(), self.pc_ent.get(), self.tel_ent.get(), 0)
+                   self.add4_ent.get(), self.pc_ent.get(), self.tel_ent.get())
         sqlc.insert_user(usr)
 
-        # Clear Text Boxes
-        self.usr_id_ent.delete(0, END)
-        self.pwrd_ent.delete(0, END)
-        self.fname_ent.delete(0, END)
-        self.lname_ent.delete(0, END)
-        self.add1_ent.delete(0, END)
-        self.add2_ent.delete(0, END)
-        self.add3_ent.delete(0, END)
-        self.add4_ent.delete(0, END)
-        self.pc_ent.delete(0, END)
-        self.tel_ent.delete(0, END)
+        # Destroy window
+        self.window.destroy()
 
 
 

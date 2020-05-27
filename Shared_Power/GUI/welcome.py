@@ -3,9 +3,9 @@ import sqlite3
 from os.path import join, dirname, abspath
 import datetime
 from Shared_Power.GUI.create_account import CreateAccount
-from Shared_Power.GUI.user_view import UserView
 from Shared_Power.GUI.tool_user_view import ToolUserView
 from Shared_Power.GUI.tool_owner_view import ToolOwnerView
+from Shared_Power.GUI.dispatch_rider_view import DispatchRiderView
 import Shared_Power.DB.sql_read as sqlr
 
 path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
@@ -22,10 +22,13 @@ class Welcome:
 
         self.master.title("Shared Power")
 
-        self.frame = Frame(master)
+        self.mainframe = Frame(self.master)
+        self.mainframe.pack()
+
+        self.frame = Frame(self.mainframe)
         self.frame.pack()
 
-        self.frame2 = Frame(master)
+        self.frame2 = Frame(self.mainframe)
         self.frame2.pack()
 
         self.usr_id_lbl = Label(self.frame, text="User ID")
@@ -46,10 +49,6 @@ class Welcome:
 
         self.quit_btn = Button(self.frame, text="Quit", command=self.frame.quit)
         self.quit_btn.grid(column=0, row=3)
-
-        # Defining class variable that will be assigned values within functions
-        self.tov = ''
-        self.tuv = ''
 
     def login(self):
         uid = self.usr_id_ent.get()
@@ -75,23 +74,14 @@ class Welcome:
         else:
             if pw == real_pw:
                 if usr_typ == "Tool User":
-                    self.frame.destroy()
-                    try:
-                        self.frame2.destroy()
-                    except AttributeError as e:
-                        with open(logfile, 'a') as log:
-                            log.write('\n' + str(now) + ' - ' + str(e))
-                    self.tuv = ToolUserView(self.master, uid)
+                    self.mainframe.destroy()
+                    ToolUserView(self.master, uid)
                 if usr_typ == "Tool Owner":
-                    self.frame.destroy()
-                    try:
-                        self.frame2.destroy()
-                    except AttributeError as e:
-                        with open(logfile, 'a') as log:
-                            log.write('\n' + str(now) + ' - ' + str(e))
-                    self.tov = ToolOwnerView(self.master, uid)
+                    self.mainframe.destroy()
+                    ToolOwnerView(self.master, uid)
                 if usr_typ == "Dispatch Rider":
-                    pass
+                    self.mainframe.destroy()
+                    DispatchRiderView(self.master, uid)
                 if usr_typ == "Insurance Company":
                     pass
                 if usr_typ == "System Admin":
@@ -101,12 +91,6 @@ class Welcome:
                 e_lbl.pack()
 
     def create_account(self):
-        self.frame.destroy()
-        try:
-            self.frame2.destroy()
-        except AttributeError as e:
-            with open(logfile, 'a') as log:
-                log.write('\n' + str(now) + ' - ' + str(e))
         CreateAccount(self.master)
 
 
