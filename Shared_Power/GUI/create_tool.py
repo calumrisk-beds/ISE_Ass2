@@ -1,31 +1,37 @@
 from tkinter import *
-import sqlite3
 from os.path import join, dirname, abspath
 import shutil
-import Shared_Power.DB.sql_create as sqlc
-from Shared_Power.Classes.tool import Tool
-
-path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
-conn = sqlite3.connect(path)
-
+from Shared_Power.DB.sql_create import SQLCreate
+from Shared_Power.Pool.tool import Tool
 
 class CreateTool:
+    """Called by Tool Owner to create a tool.
+        Tk() is passed into master from previous class, allowing main Tkinter window to run.
+        The user's ID is passed into uid_token."""
+
     def __init__(self, master, uid_token):
         self.master = master
         self.uid_token = uid_token
 
+        # New windows
         self.window = Toplevel()
 
+        # Window title
         self.window.title("Create Tool")
 
+        # Uses a main frame for other frames to be packed into
         self.mainframe = Frame(self.window)
         self.mainframe.pack()
 
+        # Frame packed into Main Frame
         self.frame = Frame(self.mainframe)
         self.frame.pack()
 
+        # Frame 2 packed into Main Frame
         self.frame2 = Frame(self.mainframe)
         self.frame2.pack()
+
+        # Various Labels and Entry Boxes to capture details
 
         self.tl_name_lbl = Label(self.frame, text="Tool Name")
         self.tl_name_lbl.grid(column=0, row=0)
@@ -56,6 +62,7 @@ class CreateTool:
         self.submit_btn.pack()
 
     def submit(self):
+        """Called when submit button is selected"""
         # Copying image file into Images directory as temporary file
         src = self.pic_path_ent.get()
         dst = join(dirname(dirname(abspath(__file__))), 'Images')
@@ -65,16 +72,19 @@ class CreateTool:
         f = open(temp_store, 'rb')
         rf = f.read()
 
-        # Store tool details in DB
+        # Temporary instance of Tool to capture data
         tl = Tool(tool_id='', tool_owner=self.uid_token, tool_name=self.tl_name_ent.get(),
                   descr=self.descr_ent.get(), day_rate=self.drate_ent.get(),
                   halfd_rate=self.hdrate_ent.get(), prof_pic=rf, repair_status='None')
-        sqlc.insert_tool(tl)
+
+        # Store instance of Tool in table of DB
+        SQLCreate().insert_tool(tl)
 
         # Destroy window
         self.window.destroy()
 
 
+# For testing purposes
 if __name__ == "__main__":
     root = Tk()
     CreateTool(root, 'test4')

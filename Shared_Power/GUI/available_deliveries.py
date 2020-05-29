@@ -1,31 +1,28 @@
 from tkinter import *
-from tkcalendar import *
-from PIL import ImageTk, Image
-import sqlite3
-from os.path import join, dirname, abspath
-import shutil
-import datetime
 from Shared_Power.GUI.manage_booking import ManageBooking
-import Shared_Power.DB.sql_read as sqlr
-
-path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
-conn = sqlite3.connect(path)
-
-logfile = join(dirname(dirname(abspath(__file__))), 'LogFile.txt')
-now = datetime.datetime.now()
+from Shared_Power.DB.sql_read import SQLRead
 
 
 class AvailableDeliveries:
+    """Called to show available deliveries for a Dispatch Rider.
+        Tk() is passed into master from previous class, allowing main Tkinter window to run.
+        The user's ID is passed into uid_token."""
+
     def __init__(self, master, uid_token):
         self.master = master
         self.uid_token = uid_token
 
+        # New window
         self.window = Toplevel()
 
+        # Window title
         self.window.title("Available Deliveries")
 
+        # Frame packed into window
         self.frame = Frame(self.window, padx=15, pady=15)
         self.frame.pack(fill=X)
+
+        # Shows available deliveries in Listbox:
 
         self.open_bkgs_lbl = Label(self.frame, text="Open Bookings")
         self.open_bkgs_lbl.pack()
@@ -44,7 +41,7 @@ class AvailableDeliveries:
         self.bkgs_lstbx.pack(fill=X)
 
         # Call available deliveries from DB
-        self.avai_delivs = sqlr.get_available_bookings_by_delivery()
+        self.avai_delivs = SQLRead().get_available_bookings_by_delivery()
 
         for x in self.avai_delivs:
             self.bkg_id = x[0]
@@ -57,11 +54,12 @@ class AvailableDeliveries:
                                                                            str(self.bkg_dc))
             self.bkgs_lstbx.insert(END, self.bkgs_short)
 
-            # Select Booking Button
-            self.slct_bkg_btn = Button(self.frame, text="Select", command=self.select_bkg)
-            self.slct_bkg_btn.pack()
+        # Select Booking Button
+        self.slct_bkg_btn = Button(self.frame, text="Select", command=self.select_bkg)
+        self.slct_bkg_btn.pack()
 
     def select_bkg(self):
+        """Called when a booking is selected."""
         # Retrieves selected item and splits the string to retrieve the Booking ID
         selected = self.bkgs_lstbx.get(ANCHOR)
         selected_bid = selected.split('#')[1]

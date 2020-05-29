@@ -1,15 +1,8 @@
 from tkinter import *
-import sqlite3
-from os.path import join, dirname, abspath
-import shutil
 from Shared_Power.GUI.create_tool import CreateTool
 from Shared_Power.GUI.manage_tool import ManageTool
 from Shared_Power.GUI.my_bookings import MyBookings
-import Shared_Power.DB.sql_read as sqlr
-
-
-path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
-conn = sqlite3.connect(path)
+from Shared_Power.DB.sql_read import SQLRead
 
 
 class MyTools:
@@ -41,7 +34,7 @@ class MyTools:
         self.tls_lstbx.pack()
 
         # Call the user's tools
-        self.my_tls = sqlr.get_tools_by_uid(self.uid_token)
+        self.my_tls = SQLRead().get_tools_by_uid(self.uid_token)
         for x in self.my_tls:
             self.tl_id = x[0]
             self.tl_name = x[2]

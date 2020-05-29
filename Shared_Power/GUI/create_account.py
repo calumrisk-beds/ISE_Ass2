@@ -1,26 +1,30 @@
 from tkinter import *
-import sqlite3
-from os.path import join, dirname, abspath
-import Shared_Power.DB.sql_create as sqlc
-from Shared_Power.Classes.user import User
-
-path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
-conn = sqlite3.connect(path)
+from Shared_Power.DB.sql_create import SQLCreate
+from Shared_Power.Pool.user import User
 
 
 class CreateAccount:
+    """Enables account creation for Tool Owner, Tool User and Dispatch Rider.
+        A system administrator must create Insurance Company accounts.
+        Tk() is passed into master from previous class, allowing main Tkinter windows to run."""
+
     def __init__(self, master):
         self.master = master
 
+        # New window
         self.window = Toplevel()
 
+        # Window title
         self.window.title("Create Account")
 
+        # Frame packed into window
         self.frame = Frame(self.window)
         self.frame.pack()
 
+        # Various Labels and Entry Boxes to capture user details
+
         self.usr_id_lbl = Label(self.frame, text="User ID")
-        self.usr_id_lbl.grid(column=0, row=0)
+        self.usr_id_lbl.grid(column=0, row=0)  # Grid format specifies position based on column and row
         self.usr_id_ent = Entry(self.frame)
         self.usr_id_ent.grid(column=1, row=0)
 
@@ -29,10 +33,11 @@ class CreateAccount:
         self.pwrd_ent = Entry(self.frame)
         self.pwrd_ent.grid(column=1, row=1)
 
+        # Option Menu for User Type
         self.usr_typ_lbl = Label(self.frame, text="User Type")
         self.usr_typ_lbl.grid(column=0, row=2)
         self.usr_typ_var = StringVar()  # Required for Option Menu
-        self.usr_typ_var.set('Tool User')
+        self.usr_typ_var.set('Tool User')  # Default value set
         self.usr_typ_opt = OptionMenu(self.frame, self.usr_typ_var, "Tool User", "Tool Owner", "Dispatch Rider")
         self.usr_typ_opt.grid(column=1, row=2)
 
@@ -84,17 +89,19 @@ class CreateAccount:
 
 
     def submit(self):
-        # Insert into DB
+        """Called when submit button is selected."""
+        # Temporary instance of User to store captured data
         usr = User(self.usr_id_ent.get(), self.pwrd_ent.get(), self.usr_typ_var.get(), self.fname_ent.get(),
                    self.lname_ent.get(), self.add1_ent.get(), self.add2_ent.get(), self.add3_ent.get(),
                    self.add4_ent.get(), self.pc_ent.get(), self.tel_ent.get())
-        sqlc.insert_user(usr)
+        # Insert instance of User into table of DB
+        SQLCreate().insert_user(usr)
 
         # Destroy window
         self.window.destroy()
 
 
-
+# For testing purposes
 if __name__ == "__main__":
     root = Tk()
     CreateAccount(root)

@@ -1,18 +1,9 @@
 from tkinter import *
 from tkinter.ttk import *
 from PIL import ImageTk, Image
-import sqlite3
 from os.path import join, dirname, abspath
-import shutil
-import datetime
 from Shared_Power.GUI.book_tool import BookTool
-import Shared_Power.DB.sql_read as sqlr
-
-path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
-conn = sqlite3.connect(path)
-
-logfile = join(dirname(dirname(abspath(__file__))), 'LogFile.txt')
-now = datetime.datetime.now()
+from Shared_Power.DB.sql_read import SQLRead
 
 
 class ToolDetails:
@@ -51,11 +42,11 @@ class ToolDetails:
         self.frame3.pack()
 
         # Fetch Tool from DB
-        self.this_tl = sqlr.get_tool_by_id(slcted_tl)
+        self.this_tl = SQLRead().get_tool_by_id(slcted_tl)
 
         # Fetch Tool Owner from DB
         tl_owner = self.this_tl[0][1]
-        self.tl_owner_usr = sqlr.get_user_by_id(tl_owner)
+        self.tl_owner_usr = SQLRead().get_user_by_id(tl_owner)
 
         # Display Tool Details
         self.tl_lbl = Label(self.frame, text="Tool Details")

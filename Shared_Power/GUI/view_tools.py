@@ -1,16 +1,6 @@
 from tkinter import *
-import sqlite3
-from os.path import join, dirname, abspath
-import shutil
-import datetime
 from Shared_Power.GUI.tool_details import ToolDetails
-import Shared_Power.DB.sql_read as sqlr
-
-path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
-conn = sqlite3.connect(path)
-
-logfile = join(dirname(dirname(abspath(__file__))), 'LogFile.txt')
-now = datetime.datetime.now()
+from Shared_Power.DB.sql_read import SQLRead
 
 
 class ViewTools:
@@ -38,13 +28,14 @@ class ViewTools:
         # Pack the Listbox with Scrollbar
         self.tls_lstbx.pack()
 
-        # Call all tools and add them to the Listbox
-        self.all_tls = sqlr.get_all_tools()
+        # Call all tools and add them to the Listbox if they do not have a repair status
+        self.all_tls = SQLRead().get_all_tools()
         for x in self.all_tls:
-            self.tl_id = x[0]
-            self.tl_name = x[2]
-            self.all_tls_short = "#{}# {}".format(str(self.tl_id), self.tl_name)
-            self.tls_lstbx.insert(END, self.all_tls_short)
+            if x[7] == "None":
+                self.tl_id = x[0]
+                self.tl_name = x[2]
+                self.all_tls_short = "#{}# {}".format(str(self.tl_id), self.tl_name)
+                self.tls_lstbx.insert(END, self.all_tls_short)
 
         self.slct_tl_btn = Button(self.frame, text="Select", command=self.select_tool)
         self.slct_tl_btn.pack()

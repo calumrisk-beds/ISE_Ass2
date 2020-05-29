@@ -1,32 +1,31 @@
 from tkinter import *
-from tkcalendar import *
-from PIL import ImageTk, Image
-import sqlite3
-from os.path import join, dirname, abspath
-import shutil
-import datetime
 from Shared_Power.GUI.manage_booking import ManageBooking
 from Shared_Power.GUI.closed_bookings import ClosedBookings
-import Shared_Power.DB.sql_read as sqlr
+from Shared_Power.DB.sql_read import SQLRead
 
-path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
-conn = sqlite3.connect(path)
-
-logfile = join(dirname(dirname(abspath(__file__))), 'LogFile.txt')
-now = datetime.datetime.now()
 
 class MyBookings:
+    """Displays open bookings.
+        Tk() is passed into master from previous class, allowing main Tkinter windows to run.
+        The user's ID is passed into uid_token.
+        The selected tool is passed into slcted_tl."""
+
     def __init__(self, master, uid_token, slcted_tl):
         self.master = master
         self.uid_token = uid_token
         self.slcted_tl = slcted_tl
 
+        # New window
         self.window = Toplevel()
 
+        # Window title
         self.window.title("My Bookings")
 
+        # Frame packed into window with defined width and height size
         self.frame = Frame(self.window, padx=15, pady=15)
-        self.frame.pack(fill=X)
+        self.frame.pack(fill=X)  # Packed to fill entire window horizontally
+
+        # Shows open bookings:
 
         self.open_bkgs_lbl = Label(self.frame, text="Open Bookings")
         self.open_bkgs_lbl.pack()
@@ -45,16 +44,18 @@ class MyBookings:
         self.bkgs_lstbx.pack(fill=X)
 
         # Call the user from the DB and check their user type
-        self.this_usr = sqlr.get_user_by_id(self.uid_token)
+        self.this_usr = SQLRead().get_user_by_id(self.uid_token)
         self.usr_type = self.this_usr[0][2]
 
         # Call the user's or tool's bookings depending on user type
         if self.usr_type == "Tool Owner":
-            self.my_open_bkgs = sqlr.get_open_bookings_by_tid(self.slcted_tl)
-        elif self.usr_type == "Dispatch Rider":
-            self.my_open_bkgs = sqlr.get_open_bookings_by_courier(self.uid_token)
-        else:
-            self.my_open_bkgs = sqlr.get_open_bookings_by_uid(self.uid_token)
+            self.my_open_bkgs = SQLRead().get_open_bookings_by_tid(self.slcted_tl)
+        if self.usr_type == "Tool User":
+            self.my_open_bkgs = SQLRead().get_open_bookings_by_uid(self.uid_token)
+        if self.usr_type == "Dispatch Rider":
+            self.my_open_bkgs = SQLRead().get_open_bookings_by_courier(self.uid_token)
+
+        # Loops through each booking and plots a readable string for the listbox
         for x in self.my_open_bkgs:
             self.bkg_id = x[0]
             self.bkg_tl = x[1]
@@ -75,6 +76,7 @@ class MyBookings:
         self.clsd_bkgs_btn.pack()
 
     def select_bkg(self):
+        """Called when a tool is selected."""
         # Retrieves selected item and splits the string to retrieve the Booking ID
         selected = self.bkgs_lstbx.get(ANCHOR)
         selected_bid = selected.split('#')[1]
@@ -82,9 +84,13 @@ class MyBookings:
         # Destroy window
         self.window.destroy()
 
-        # Call ManageBooking and pass the value of User ID and Booking ID
+        # Calls ManageBooking and passes the value of User ID and Booking ID
         ManageBooking(self.master, self.uid_token, selected_bid)
 
     def closed_bkgs(self):
+        """Called when a closed bookings button is selected."""
+        # Destroy window
         self.window.destroy()
+
+        # Calls ClosedBookings and passes the value of User ID and Booking ID
         ClosedBookings(self.master, self.uid_token, self.slcted_tl)

@@ -1,13 +1,7 @@
 from tkinter import *
-import sqlite3
-from os.path import join, dirname, abspath
-import shutil
 from Shared_Power.GUI.create_tool import CreateTool
 from Shared_Power.GUI.my_tools import MyTools
 from Shared_Power.GUI.my_invoices import MyInvoices
-
-path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
-conn = sqlite3.connect(path)
 
 
 class ToolOwnerView:

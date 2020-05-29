@@ -1,16 +1,8 @@
 from tkinter import *
-import sqlite3
-from os.path import join, dirname, abspath
-import shutil
-from PIL import ImageTk, Image
 from Shared_Power.GUI.add_condition import AddCondition
-import Shared_Power.DB.sql_read as sqlr
-import Shared_Power.DB.sql_update as sqlu
-import Shared_Power.DB.sql_delete as sqld
-
-
-path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
-conn = sqlite3.connect(path)
+from Shared_Power.DB.sql_read import SQLRead
+from Shared_Power.DB.sql_update import SQLUpdate
+from Shared_Power.DB.sql_delete import SQLDelete
 
 
 class ManageBooking:
@@ -33,11 +25,13 @@ class ManageBooking:
         self.frame2.pack()
 
         # Fetch details from DB
-        self.this_usr = sqlr.get_user_by_id(self.uid_token)
-        self.this_bkg = sqlr.get_booking_by_id(self.slcted_bkg)
-        self.this_tl = sqlr.get_tool_by_id(self.this_bkg[0][1])
-        self.tl_owner_usr = sqlr.get_user_by_id(self.this_tl[0][1])
-        self.bked_by = sqlr.get_user_by_id(self.this_bkg[0][2])
+        self.this_usr = SQLRead().get_user_by_id(self.uid_token)
+        self.this_bkg = SQLRead().get_booking_by_id(self.slcted_bkg)
+        self.this_tl = SQLRead().get_tool_by_id(self.this_bkg[0][1])
+        self.tl_owner_usr = SQLRead().get_user_by_id(self.this_tl[0][1])
+        self.bked_by = SQLRead().get_user_by_id(self.this_bkg[0][2])
+        self.cour_usr = SQLRead().get_user_by_id(self.this_bkg[0][6])
+        self.cases = SQLRead().get_cases_by_bid(self.slcted_bkg)
 
         # Display Booking and Tool Details
         self.bkg_details_lbl = Label(self.frame, text="Booking Details")
@@ -117,6 +111,11 @@ class ManageBooking:
         self.ownr_tel = Label(self.frame, text=self.tl_owner_usr[0][10])
         self.ownr_tel.grid(column=5, row=8)
 
+        self.ownr_id_lbl = Label(self.frame, text="User ID:")
+        self.ownr_id_lbl.grid(column=4, row=9)
+        self.ownr_id = Label(self.frame, text=self.tl_owner_usr[0][0])
+        self.ownr_id.grid(column=5, row=9)
+
         # Blank Label to space out details
         self.blank_lbl2 = Label(self.frame)
         self.blank_lbl2.grid(column=6, row=0, padx=50)
@@ -156,6 +155,56 @@ class ManageBooking:
         self.bkr_tel = Label(self.frame, text=self.bked_by[0][10])
         self.bkr_tel.grid(column=8, row=8)
 
+        self.bkr_id_lbl = Label(self.frame, text="User ID:")
+        self.bkr_id_lbl.grid(column=7, row=9)
+        self.bkr_id = Label(self.frame, text=self.bked_by[0][0])
+        self.bkr_id.grid(column=8, row=9)
+
+        if self.this_bkg[0][6] != '':
+            # Blank Label to space out details
+            self.blank_lbl3 = Label(self.frame)
+            self.blank_lbl3.grid(column=9, row=0, padx=50)
+
+            # Display Dispatch Rider Details
+            self.rdr_lbl = Label(self.frame, text="Dispatch Rider Details")
+            self.rdr_lbl.grid(column=10, row=0, padx=20)
+
+            self.rdr_fname_lbl = Label(self.frame, text="First Name:")
+            self.rdr_fname_lbl.grid(column=10, row=1)
+            self.rdr_fname = Label(self.frame, text=self.cour_usr[0][3])
+            self.rdr_fname.grid(column=11, row=1)
+
+            self.rdr_lname_lbl = Label(self.frame, text="Last Name:")
+            self.rdr_lname_lbl.grid(column=10, row=2)
+            self.rdr_lname = Label(self.frame, text=self.cour_usr[0][4])
+            self.rdr_lname.grid(column=11, row=2)
+
+            self.rdr_add_lbl = Label(self.frame, text="Address:")
+            self.rdr_add_lbl.grid(column=10, row=3)
+            self.rdr_add1 = Label(self.frame, text=self.cour_usr[0][5])
+            self.rdr_add1.grid(column=11, row=3)
+            self.rdr_add2 = Label(self.frame, text=self.cour_usr[0][6])
+            self.rdr_add2.grid(column=11, row=4)
+            self.rdr_add3 = Label(self.frame, text=self.cour_usr[0][7])
+            self.rdr_add3.grid(column=11, row=5)
+            self.rdr_add4 = Label(self.frame, text=self.cour_usr[0][8])
+            self.rdr_add4.grid(column=11, row=6)
+
+            self.rdr_pc_lbl = Label(self.frame, text="Post Code:")
+            self.rdr_pc_lbl.grid(column=10, row=7)
+            self.rdr_pc = Label(self.frame, text=self.cour_usr[0][9])
+            self.rdr_pc.grid(column=11, row=7)
+
+            self.rdr_tel_lbl = Label(self.frame, text="Telephone No:")
+            self.rdr_tel_lbl.grid(column=10, row=8)
+            self.rdr_tel = Label(self.frame, text=self.cour_usr[0][10])
+            self.rdr_tel.grid(column=11, row=8)
+
+            self.rdr_id_lbl = Label(self.frame, text="User ID:")
+            self.rdr_id_lbl.grid(column=10, row=9)
+            self.rdr_id = Label(self.frame, text=self.cour_usr[0][0])
+            self.rdr_id.grid(column=11, row=9)
+
         # Show Completed Status
         if self.this_bkg[0][7] == "Yes":
             self.completed_status = "This Booking is Completed"
@@ -171,23 +220,37 @@ class ManageBooking:
             self.late_lbl.pack()
 
         # Add Condition Details Button
-        self.add_cond_btn = Button(self.frame2, text="Add Condition Details", command=self.add_cond)
+        self.add_cond_btn = Button(self.frame2, text="Add Condition Case with Insurance Company", command=self.add_cond)
         self.add_cond_btn.pack()
 
-        # Tool Owner can add days late and complete the booking
-        if self.this_usr[0][2] == "Tool Owner":
-            self.dys_late_lbl = Label(self.frame2, text="Enter Number of Days late the tool was returned (leave blank if none):")
+        # Tool Owner can add days late, complete the booking and delete the booking
+        # This only shows for open bookings and if all condition cases are resolved
+
+        self.unrslved_case = False
+        for x in self.cases:
+            if x[10] == "No":
+                self.unrslved_case = True
+
+        if (self.this_bkg[0][7] == "No") and (self.this_usr[0][2] == "Tool Owner") and (not self.unrslved_case):
+            self.dys_late_lbl = Label(self.frame2,
+                                      text="Enter Number of Days late the tool was returned (leave blank if none):")
             self.dys_late_lbl.pack()
             self.dys_late_ent = Entry(self.frame2)
             self.dys_late_ent.pack()
+
             self.compl_btn = Button(self.frame2, text="COMPLETE BOOKING", command=self.complete)
             self.compl_btn.pack()
 
-        # Delete Booking Button only shows for open bookings and you must be a Tool Owner or a Tool User
-        if self.this_bkg[0][7] == "No" and (self.this_usr[0][2] == "Tool Owner" or self.this_usr[0][2] == "Tool User"):
             self.del_bkg_btn = Button(self.frame2, text="Delete Booking", fg='red', command=self.delete_bkg)
             self.del_bkg_btn.pack()
 
+        if self.unrslved_case:
+            self.unrslved_lbl = Label(self.frame2, text="There is an unresolved condition case "
+                                                        "being investigated by the insurance company.",
+                                      fg='red')
+            self.unrslved_lbl.pack()
+
+        # Take Delivery Button appears if courier_id is blank
         if (self.this_usr[0][2] == "Dispatch Rider") and \
                 (self.this_bkg[0][5] == "Delivery") and \
                 (self.this_bkg[0][6] == ""):
@@ -202,14 +265,21 @@ class ManageBooking:
             late_days = self.dys_late_ent.get()
         else:
             late_days = 0
-        sqlu.complete_booking(self.slcted_bkg, 'Yes', late_days)
+        SQLUpdate().complete_booking(self.slcted_bkg, 'Yes', late_days)
         self.window.destroy()
 
     def delete_bkg(self):
-        sqld.remove_booking(self.slcted_bkg)
+        SQLDelete().remove_booking(self.slcted_bkg)
         self.window.destroy()
 
     def take_deliv(self):
-        sqlu.assign_courier(self.slcted_bkg, self.uid_token)
+        SQLUpdate().assign_courier(self.slcted_bkg, self.uid_token)
         self.window.destroy()
+
+
+# For testing purposes
+if __name__ == "__main__":
+    root = Tk()
+    ManageBooking(root, 'to1', 5)
+    root.mainloop()
 

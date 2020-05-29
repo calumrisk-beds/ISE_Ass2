@@ -1,18 +1,11 @@
 from tkinter import *
-import sqlite3
-from os.path import join, dirname, abspath
-import datetime
 from Shared_Power.GUI.create_account import CreateAccount
 from Shared_Power.GUI.tool_user_view import ToolUserView
 from Shared_Power.GUI.tool_owner_view import ToolOwnerView
 from Shared_Power.GUI.dispatch_rider_view import DispatchRiderView
-import Shared_Power.DB.sql_read as sqlr
-
-path = join(dirname(dirname(abspath(__file__))), 'DB/shared_power.db')
-conn = sqlite3.connect(path)
-
-logfile = join(dirname(dirname(abspath(__file__))), 'LogFile.txt')
-now = datetime.datetime.now()
+from Shared_Power.GUI.insurance_company_view import InsuranceCompanyView
+from Shared_Power.DB.sql_read import SQLRead
+from Shared_Power.Logs.log import Log
 
 
 class Welcome:
@@ -53,22 +46,20 @@ class Welcome:
     def login(self):
         uid = self.usr_id_ent.get()
         pw = self.pwrd_ent.get()
-        get_usr = sqlr.get_user_by_id(uid)
+        get_usr = SQLRead().get_user_by_id(uid)
 
         try:
             real_pw = get_usr[0][1]
             usr_typ = get_usr[0][2]
         except IndexError as e:
-            with open(logfile, 'a') as log:
-                log.write('\n' + str(now) + ' - ' + str(e))
+            Log().error(e)
 
         try:
             # Checks variables have been assigned values before running if statement
             real_pw = real_pw
             usr_typ = usr_typ
         except UnboundLocalError as e:
-            with open(logfile, 'a') as log:
-                log.write('\n' + str(now) + ' - ' + str(e))
+            Log().error(e)
             e_lbl = Label(self.frame2, text="Invalid User ID or Password")
             e_lbl.pack()
         else:
@@ -83,9 +74,8 @@ class Welcome:
                     self.mainframe.destroy()
                     DispatchRiderView(self.master, uid)
                 if usr_typ == "Insurance Company":
-                    pass
-                if usr_typ == "System Admin":
-                    pass
+                    self.mainframe.destroy()
+                    InsuranceCompanyView(self.master, uid)
             else:
                 e_lbl = Label(self.frame2, text="Invalid User ID or Password")
                 e_lbl.pack()
@@ -94,6 +84,7 @@ class Welcome:
         CreateAccount(self.master)
 
 
+# For testing purposes
 if __name__ == "__main__":
     root = Tk()
     Welcome(root)
