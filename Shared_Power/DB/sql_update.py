@@ -23,7 +23,8 @@ class SQLUpdate:
         """Updates tool from tools table by passing in a Tool object."""
         with self.conn:
             self.c.execute("""UPDATE tools SET tool_name = :tool_name, descr = :descr, 
-                        day_rate = :day_rate, halfd_rate = :halfd_rate, prof_pic = :prof_pic
+                        day_rate = :day_rate, halfd_rate = :halfd_rate, prof_pic = :prof_pic, 
+                        repair_status = :repair_status
                         WHERE tool_id = :tool_id""",
                       {'tool_id': tl.tool_id,
                        'tool_owner': tl.tool_owner,
@@ -31,7 +32,8 @@ class SQLUpdate:
                        'descr': tl.descr,
                        'day_rate': tl.day_rate,
                        'halfd_rate': tl.halfd_rate,
-                       'prof_pic': tl.prof_pic})
+                       'prof_pic': tl.prof_pic,
+                       'repair_status': tl.repair_status})
 
     def update_case(self, case):
         """Updates case from cases table by passing in a Case object."""

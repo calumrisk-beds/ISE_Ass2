@@ -384,13 +384,14 @@ class MyInvoices:
                                                text=("Booking ID " + str(x[0]) +
                                                      " delivery charge: " + show_deliv_chrg))
                         deliv_chrg_lbl.pack()
-                    else:
-                        deliv_charge = 0
 
                         show_bkg_dmg_chrg = "£{:,.2f}".format(bkg_damage_chrg)
                         bkg_dmg_lbl = Label(self.frame2, text=("Booking ID " + str(x[0]) +
                                                                " your damage charges: " + show_bkg_dmg_chrg))
                         bkg_dmg_lbl.pack()
+                    else:
+                        deliv_charge = 0
+
 
                     deliv_chrg_totals += deliv_charge
                     dmg_charge_totals += bkg_damage_chrg
@@ -402,6 +403,8 @@ class MyInvoices:
                                              fg='red')
                         open_bkg_lbl.pack()
 
+            inv_divider_lbl = Label(self.frame2, text="---------------------------------")
+            inv_divider_lbl.pack()
 
             show_deliv_chrg_totals = "£{:,.2f}".format(deliv_chrg_totals)
             deliv_chrg_totals_lbl = Label(self.frame2, text=("Total delivery earnings: " + show_deliv_chrg_totals))
@@ -428,90 +431,6 @@ class MyInvoices:
             else:
                 open_bkgs_lbl = Label(self.frame2, text="This invoice is closed.", fg='green')
                 open_bkgs_lbl.pack()
-
-
-    def inv_dptch_rdr(self, month, year):
-        # Calculations to determine if a future invoice is trying to be fetched
-        # +2000 to match datetime year and +1 for month because invoices are generated at the end of every month
-        first_date = date((year + 2000), month, 1) + relativedelta(months=+1)
-        second_date = self.today
-        date_length = (second_date - first_date).days
-        # Error label is displayed if future invoice is attempted to be fetched
-        if date_length < 0:
-            date_err_lbl = Label(self.frame2, text="You can only select past invoices", fg='red')
-            date_err_lbl.pack()
-        # Proceeds with code to determine other invoice parameters if there is not an error
-        else:
-            my_bkgs = SQLRead().get_bookings_by_courier(self.uid_token)
-
-            deliv_chrg_totals = 0
-            dmg_charge_totals = 0
-            open_bkgs = False
-            for x in my_bkgs:
-                end_time = x[4]
-                end_date = end_time.split(':')[0]
-
-                if (int(end_date.split('/')[0]) == month) and (int(end_date.split('/')[2]) == year):
-                    cases = SQLRead().get_cases_by_bid(x[0])
-                    bkg_damage_chrg = 0
-                    for y in cases:
-                        if y[8] == self.uid_token:
-                            this_charge = y[9]
-                            bkg_damage_chrg += this_charge
-
-                    if x[5] == "Delivery":
-                        deliv_charge = 4
-                        show_deliv_chrg = "£{:,.2f}".format(deliv_charge)
-                        deliv_chrg_lbl = Label(self.frame2,
-                                               text=("Booking ID " + str(x[0]) +
-                                                     " delivery charge: " + show_deliv_chrg))
-                        deliv_chrg_lbl.pack()
-                    else:
-                        deliv_charge = 0
-
-                        show_bkg_dmg_chrg = "£{:,.2f}".format(bkg_damage_chrg)
-                        bkg_dmg_lbl = Label(self.frame2, text=("Booking ID " + str(x[0]) +
-                                                               " your damage charges: " + show_bkg_dmg_chrg))
-                        bkg_dmg_lbl.pack()
-
-                    deliv_chrg_totals += deliv_charge
-                    dmg_charge_totals += bkg_damage_chrg
-
-                    if x[7] == "No":
-                        open_bkgs = True
-                        open_bkg_lbl = Label(self.frame2,
-                                             text=("Booking ID " + str(x[0]) + " is still open"),
-                                             fg='red')
-                        open_bkg_lbl.pack()
-
-
-            show_deliv_chrg_totals = "£{:,.2f}".format(deliv_chrg_totals)
-            deliv_chrg_totals_lbl = Label(self.frame2, text=("Total delivery earnings: " + show_deliv_chrg_totals))
-            deliv_chrg_totals_lbl.pack()
-
-            show_dmg_chrg_totals = "£{:,.2f}".format(dmg_charge_totals)
-            dmg_chrg_totals_lbl = Label(self.frame2, text=("Total damage charges: " + show_dmg_chrg_totals), fg='red')
-            dmg_chrg_totals_lbl.pack()
-
-            if deliv_chrg_totals == 0:
-                insure_charge = 0
-            else:
-                insure_charge = 5
-
-            show_insure_charge = "£{:,.2f}".format(insure_charge)
-            ins_chrg_lbl = Label(self.frame2, text=("Insurance charge: " + show_insure_charge))
-            ins_chrg_lbl.pack()
-
-            if open_bkgs == True:
-                open_bkgs_lbl = Label(self.frame2,
-                                      text="You still have open booking, therefore this invoice is still open.",
-                                      fg='blue')
-                open_bkgs_lbl.pack()
-            else:
-                open_bkgs_lbl = Label(self.frame2, text="This invoice is closed.", fg='green')
-                open_bkgs_lbl.pack()
-
-
 
 
 if __name__ == "__main__":

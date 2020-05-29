@@ -45,8 +45,6 @@ class ManageTool:
         self.curr_val_lbl = Label(self.frame, text="Current Value", padx=20)
         self.curr_val_lbl.grid(column=1, row=0)
 
-
-
         self.tl_id_lbl = Label(self.frame, text="Tool ID")
         self.tl_id_lbl.grid(column=0, row=1)
         self.this_tl_id = Label(self.frame, text=self.this_tl[0][0])
